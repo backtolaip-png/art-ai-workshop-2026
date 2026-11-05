@@ -1,0 +1,4 @@
+source_id,file_name,page,section_title,content_type,date_indexed,notes
+TM-001,TM-001_test-record.txt,1,作品基本資訊,目錄基本資料,2026-11-05,虛構測試示例；含作品名稱／作者／年代／媒材／尺寸／館藏編號
+TM-001,TM-001_test-record.txt,2,狀況與風格描述,風格描述與保存狀況,2026-11-05,虛構測試示例；含印記／皴法描述／破損情形／1987年托裱修復紀錄
+TM-001,TM-001_test-record.txt,3,著錄與來源,著錄與購藏,2026-11-05,虛構測試示例；含出版物頁碼（第12–13頁）與1998年購藏資訊

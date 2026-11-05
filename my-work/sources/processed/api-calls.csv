@@ -1,0 +1,5 @@
+call_id,date,task,endpoint,model,tokens_in,tokens_out,cost_usd,actual_model_returned,latency_sec,result_file,notes
+OCR-VIS-001,2026-11-05,看圖+OCR（浮世繪〈神奈川沖浪裏〉描述與款識轉錄）,/api/v1/chat/completions,anthropic/claude-haiku-5.5,-,-,0.0000,-,-,artifacts/response_vision_claude-haiku-5.5.json,首次呼叫403被拒：Anthropic限制本機所在區域；未計費
+VIS-001,2026-11-05,看圖+OCR（同上·備援模型重試）,/api/v1/chat/completions,qwen/qwen3.8-flash,767,425,0.0003148,qwen/qwen3.8-flash,10.3,artifacts/response_vision_qwen3.8-flash.json,成功轉錄款識「冨嶽三十六景 神奈川沖浪裏」；輸入含base64圖
+GEN-IMG-001,2026-11-05,圖像生成（博物館研究室浮世繪檢視桌）,/api/v1/images,qwen/qwen-image-2.1-turbo,-,-,0.0184,qwen/qwen-image-2.1-turbo,16.9,artifacts/genimage_qwen-image-2.1-turbo.png,1K解析度、3:2、輸出1024x684 PNG；失敗不計費的制度已驗證於官方文件
+TOTAL,,3筆呼叫（1筆免費失敗+2筆成功）,,-,-,-,0.0187148,,,,合計約新台幣0.6元內
