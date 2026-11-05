@@ -1,0 +1,4 @@
+source_id,scene_name,object_name,object_type,location_x,location_y,location_z,size_x_y_z,hidden,children,captured_at_utc,blender_version,mcp_server_version,method,notes
+BLEN-001,Scene,Cube,mesh,0.0,0.0,0.0,2.0x2.0x2.0,,,2026-11-05T09:55:17.039Z,5.2,MCP for Blender 1.30.0,MCP get_scene_info（只讀取；via socket 127.0.0.1:9876）,預設啟動場景物件；active & selected；未修改、未存檔
+BLEN-001,Scene,Light,light,4.08,1.01,5.9,,,,2026-11-05T09:55:17.039Z,5.2,MCP for Blender 1.30.0,MCP get_scene_info（只讀取; via socket 127.0.0.1:9876）,預設啟動場景物件；未修改、未存檔
+BLEN-001,Scene,Camera,camera,7.36,-6.93,4.96,,,,2026-11-05T09:55:17.039Z,5.2,MCP for Blender 1.30.0,MCP get_scene_info（只讀取；via socket 127.0.0.1:9876）,預設啟動場景物件；未修改、未存檔
