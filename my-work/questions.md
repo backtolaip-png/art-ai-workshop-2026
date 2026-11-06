@@ -55,8 +55,15 @@
 
 ---
 
-## 已解決插曲（可帶到課堂分享的實例）：模型地區限制（403）
+## Q3：OpenRouter 上做不了向量檢索（embedding）？帶到課堂討論
 
-- **現象**：呼叫 `anthropic/claude-haiku-5.5` 得到 403 `This model is not available in your region.`——模型「來源商」（Anthropic）不對本機所在地區提供服務，與帳戶餘額無關；OpenRouter 未收費。
+- **現象**：2026-11-06 測試時查官方文件，`docs/features/embeddings` 頁面 404；`GET /api/v1/models` 全目錄搜「embed」零命中。
+- **推測**：OpenRouter 已不再提供統一 embeddings 端點（或已移出主目錄）。
+- **想問**：課堂語義檢索環節打算用什麼替代方案：(a) 本機跑 sentence-transformers（uv 建立環境）；(b) 獨立向量服務；(c) 其他？
+- **參考**：本日方法誌 `my-work/research/2026-11-06-api-smoke-test-method.md` C 節。
+
+---
+
+## 已解決插曲（可帶到課堂分享的實例）：模型地區限制（403）- **現象**：呼叫 `anthropic/claude-haiku-5.5` 得到 403 `This model is not available in your region.`——模型「來源商」（Anthropic）不對本機所在地區提供服務，與帳戶餘額無關；OpenRouter 未收費。
 - **學到的事**：這正是用 OpenRouter 的價值——同一把金鑰、同一個請求格式，換一個模型 slug（改用 `qwen/qwen3.8-flash`）就成功了。挑熱門大廠模型前，先想好一個「備援模型」。
 - **金鑰管理實務**：本次金鑰曾以完整字串出現在對話視窗；已排程到 OpenRouter Keys 頁面撤銷重發（Delete → Create Key），.env 也要同步更新。平日金鑰只存 .env， .env 靠 .gitignore（my-work/.gitignore 已排除 .env 與 artifacts/）永不入庫。

@@ -3,3 +3,6 @@ OCR-VIS-001,2026-11-05,看圖+OCR（浮世繪〈神奈川沖浪裏〉描述與�
 VIS-001,2026-11-05,看圖+OCR（同上·備援模型重試）,/api/v1/chat/completions,qwen/qwen3.8-flash,767,425,0.0003148,qwen/qwen3.8-flash,10.3,artifacts/response_vision_qwen3.8-flash.json,成功轉錄款識「冨嶽三十六景 神奈川沖浪裏」；輸入含base64圖
 GEN-IMG-001,2026-11-05,圖像生成（博物館研究室浮世繪檢視桌）,/api/v1/images,qwen/qwen-image-2.1-turbo,-,-,0.0184,qwen/qwen-image-2.1-turbo,16.9,artifacts/genimage_qwen-image-2.1-turbo.png,1K解析度、3:2、輸出1024x684 PNG；失敗不計費的制度已驗證於官方文件
 TOTAL,,3筆呼叫（1筆免費失敗+2筆成功）,,-,-,-,0.0187148,,,,合計約新台幣0.6元內
+OCR-VIS-002,2026-11-06,看圖+OCR（Wikimedia公共領域《神奈川沖浪裏》·URL路線第1次）,/api/v1/chat/completions,qwen/qwen3.8-flash,2615,599,0.00067378,qwen/qwen3.8-flash,29.8,artifacts/response_vision_qwen3.8-flash-2.json,第1次呼叫HTTP 200但max_tokens=600被reasoning耗盡（finish_reason=length，content空）；圖500萬px級URL路線；扣費照記
+OCR-VIS-002b,2026-11-06,看圖+OCR（同上·第2次=修復參數後成功）,/api/v1/chat/completions,qwen/qwen3.8-flash,2579,94,0.00043103,qwen/qwen3.8-flash,14.7,artifacts/response_vision_qwen3.8-flash-3.json,max_tokens=2000+reasoning:{enabled:false}後finish_reason=stop；OCR逐字命中「冨嶽三十六景／神奈川沖浪裏／北斎」；供應商Alibaba
+GEN-IMG-002,2026-11-06,圖像生成（博物館檢視室浮世繪檢視桌·3:2 1K）,/api/v1/images,qwen/qwen-image-2.1-turbo,-,-,0.0184,qwen/qwen-image-2.1-turbo,15.4,artifacts/genimage_qwen-image-2.1-turbo-2.png,實測費用與官方endpoints端點標示每張\$0.0184完全一致；1024px級輸出；回應meta存response_genimage_...-2.json
