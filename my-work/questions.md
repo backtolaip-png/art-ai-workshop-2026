@@ -40,6 +40,7 @@
   - 本機預先建好的 `my-work/` 已用 `rsync --ignore-existing`（只加不覆蓋）搬入倉庫的 `my-work/`，講師的 README 範本全數保留
   - 安全驗證已通過：`git check-ignore -v` 確認 `my-work/.env` 與 `my-work/artifacts/*` 均被規則攔截，不會入庫（講師的根 `.gitignore` + 我自己的 `my-work/.gitignore` 雙保險）
   - 遺留：`~/my-work/`（原家目錄副本）先當備份保留，等 push 成功後可刪
+  - **✅ 2026-11-06 收尾**：push 已成功（GitHub 線上已驗證最新 commit `4de7650` 與本機指紋一致）；家目錄舊副本經遞迴比對（`.env` 與 `artifacts/*` 逐檔相同，無任何獨有內容）後已刪除，本倉庫 `my-work/` 為唯一工作副本。
 
 ---
 
