@@ -42,3 +42,20 @@ node MCP client（本測試腳本）
 
 - [ ] 若要持續使用 MCP 編輯場景，可依官方 README 把 `uvx mcp-for-blender` 註冊成 OpenCode 的 MCP 設定（README 有 OpenCode 專屬 JSON 範例）；本次僅以 stdio 一次性呼叫完成測試
 - [ ] 注意 blender-mcp 套件已更名 mcp-for-blender（`uvx blender-mcp` 舊名仍可用）
+
+---
+
+## ✅ 2026-11-06 重新驗證（BLEN-002）｜成功
+
+- **條件**：Blender 5.2.3 LTS 開著、插件自動啟動伺服器（9876 在線）；`uvx mcp-for-blender`（server 1.30.0）
+- **流程**：spawn `uvx mcp-for-blender` → `initialize`／`notifications/initialized` 握手（protocol 2024-11-05）→
+  `tools/list` 取工具箱 → 只呼叫唯讀 `get_scene_info` → 累計 **0.7 秒**取回場景
+- **工具箱觀察**：可用工具 9 件（get_addon_status / disable_telemetry / get_scene_info / execute_blender_code /
+  record_trajectory_feedback / look / generate_3d / search_assets / import_asset）；本日僅用 get_scene_info
+- **與 BLEN-001 比對**：Cube (0,0,0) 2×2×2、Light (4.08,1.01,5.9)、Camera (7.36,−6.93,4.96) **逐格一致** →
+  隔夜零改動，符合「不破壞既有場景」承諾
+- **產物**：
+  - `../sources/processed/blender-scene-inventory.csv` 追加 BLEN-002 三行（_utc 時戳 2026-11-06T02:58:50Z）
+  - `../artifacts/response_blender_scene_info_BLEN-002.json`（完整 MCP 回應；不入庫）
+  - 連線腳本暫存系統 temp（一次性重跑用）；步驟已完整記於本誌故不入庫
+- **安全**：同昨日四條安全聲明，全數遵守（唯讀、不存檔、localhost、僅啟用插件一項寫入偏好）
